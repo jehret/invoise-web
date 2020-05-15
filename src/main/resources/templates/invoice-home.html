@@ -13,10 +13,7 @@
 <table border="1">
     <tr th:each="invoice: ${invoices}">
         <td>
-            <a th:href="${invoice.number}" th:text="${invoice.number}"/>
-            <!-- ou pour une URL relative au context path
-                <a th:href="@{/invoice/{number}(number=${invoice.number})}" th:text="${invoice.number}"/>
-            -->
+            <a th:href="@{/invoice/{number}(number=${invoice.number})}" th:text="${invoice.number}"/>
         </td>
         <td th:text="${invoice.customerName}"></td>
     </tr>
