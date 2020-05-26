@@ -27,7 +27,7 @@ public class InvoiceControllerWeb implements InvoiceControllerInterface {
         this.invoiceService = invoiceService;
     }
 
-    @PostMapping("")
+    @PostMapping
     public String createInvoice(@ModelAttribute Invoice invoice){
 
         invoiceService.createInvoice(invoice);
