@@ -28,7 +28,7 @@ public class InvoiceResource {
     }
 
     @PostMapping
-    public Invoice create(Invoice invoice){
+    public Invoice create(@RequestBody Invoice invoice){
 
         return invoiceService.createInvoice(invoice);
     }
