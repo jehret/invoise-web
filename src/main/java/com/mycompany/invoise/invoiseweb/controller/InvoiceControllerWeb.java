@@ -30,7 +30,7 @@ public class InvoiceControllerWeb {
         this.invoiceService = invoiceService;
     }
 
-    /*@PostMapping
+    @PostMapping("/create")
     public String createInvoice(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results){
         //vous pourriez même supprimer l'annotation @ModelAttribute si vous ne comptez
         //pas donner un identifiant personnalisé au backing bean
@@ -42,7 +42,7 @@ public class InvoiceControllerWeb {
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
         return "invoice-created";
-    }*/
+    }
 
     @GetMapping("/home")
     public String displayHome(Model model){
