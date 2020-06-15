@@ -39,8 +39,7 @@ public class InvoiceControllerWeb {
             return "invoice-create-form";
         }
         Invoice invoice = new Invoice();
-        Customer customer=new Customer();
-        customer.setName(invoiceForm.getCustomerName());
+        Customer customer=new Customer(invoiceForm.getCustomerName());
         invoice.setCustomer(customer);
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
