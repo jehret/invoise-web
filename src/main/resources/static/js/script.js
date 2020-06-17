@@ -20,7 +20,7 @@ fetch('../invoice')
             tr.appendChild(td);
 
             td = document.createElement("td");
-            text = document.createTextNode(`${invoice.customerName}`);
+            text = document.createTextNode(`${invoice.customer.name}`);
             td.appendChild(text);
             tr.appendChild(td);
 
@@ -54,7 +54,7 @@ function showDetail(invoiceNumber){
         invoiceDetailNode.appendChild(p);
 
         p = document.createElement("p");
-        text = document.createTextNode(`Customer name: ${res.customerName}`);
+        text = document.createTextNode(`Customer name: ${res.customer.name}`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
 
