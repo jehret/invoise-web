@@ -2,19 +2,21 @@ DELETE FROM PRODUCT_CATEGORIES;
 DELETE FROM CATEGORY;
 DELETE FROM INVOICE_LINE;
 DELETE FROM PRODUCT;
-DELETE FROM ADDRESS;
 DELETE FROM INVOICE;
 DELETE FROM CUSTOMER;
+DELETE FROM ADDRESS;
 
-INSERT INTO CUSTOMER (NAME) VALUES
-  ('John Doe'),
-  ('Mike Myers'),
-  ('Benny Hill');
+INSERT INTO ADDRESS (STREET,STREET_NUMBER,CITY,ZIP_CODE,COUNTRY) VALUES
+  ('Trust Road','926','Hastings','4178','New Zealand'),
+  ('Somewhere Street',NULL,'New York','10005','United States'),
+  ('Thames Street','25B','London','SE10 9DD','United Kingdom');
 
-INSERT INTO ADDRESS (STREET,STREET_NUMBER,CITY,ZIP_CODE,COUNTRY,ID_CUSTOMER) VALUES
-  ('Trust Road','926','Hastings','4178','New Zealand',(select ID from CUSTOMER where NAME='John Doe')),
-  ('Somewhere Street',NULL,'New York','10005','United States',(select ID from CUSTOMER where NAME='Mike Myers')),
-  ('Thames Street','25B','London','SE10 9DD','United Kingdom',(select ID from CUSTOMER where NAME='Benny Hill'));
+INSERT INTO CUSTOMER (NAME,ID_ADDRESS) VALUES
+  ('John Doe',(select ID from ADDRESS where ZIP_CODE='4178')),
+  ('Mike Myers',(select ID from ADDRESS where ZIP_CODE='10005')),
+  ('Benny Hill',(select ID from ADDRESS where ZIP_CODE='SE10 9DD'));
+
+
   
 INSERT INTO CATEGORY (NAME) VALUES
   ('Fragile'),
