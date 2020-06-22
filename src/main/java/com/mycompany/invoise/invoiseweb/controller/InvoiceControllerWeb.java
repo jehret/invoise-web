@@ -44,7 +44,7 @@ public class InvoiceControllerWeb {
         invoice.setCustomer(customer);
         Address address=new Address(invoiceForm.getStreetName(),invoiceForm.getStreetNumber(),invoiceForm.getCity(),invoiceForm.getZipCode(),invoiceForm.getCountry());
         customer.setAddress(address);
-        //invoice.setOrderNumber(invoiceForm.getOrderNumber());
+        invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
         return "invoice-created";
     }
