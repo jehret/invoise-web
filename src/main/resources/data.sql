@@ -43,12 +43,12 @@ INSERT INTO INVOICE (ORDER_NUMBER,ID_CUSTOMER) VALUES
   ('AA123456789A',(select ID from CUSTOMER where NAME='John Doe')),
   ('AA123456789B',(select ID from CUSTOMER where NAME='John Doe')),
   ('BB123456789A',(select ID from CUSTOMER where NAME='Mike Myers')),
-  (NULL,(select ID from CUSTOMER where NAME='Benny Hill'));
-  
+  ('BB123456789B',(select ID from CUSTOMER where NAME='Benny Hill'));
+
 INSERT INTO INVOICE_LINE (ID_PRODUCT,QUANTITY,INVOICE_NUMBER) VALUES
   ((select ID from PRODUCT where NAME='Picnic Forks'),10,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER='AA123456789A')),
   ((select ID from PRODUCT where NAME='Autonomous Lawn Mower'),1,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER='AA123456789A')),
   ((select ID from PRODUCT where NAME='Smartphone'),1,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER='AA123456789B')),
   ((select ID from PRODUCT where NAME='Picnic Forks'),22,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER='BB123456789A')),
   ((select ID from PRODUCT where NAME='Mirror'),2,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER='BB123456789A')),
-  ((select ID from PRODUCT where NAME='Picnic Forks'),5,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER IS NULL));
+  ((select ID from PRODUCT where NAME='Picnic Forks'),5,(select INVOICE_NUMBER from INVOICE where ORDER_NUMBER ='BB123456789B'));
