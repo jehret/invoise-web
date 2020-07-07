@@ -1,7 +1,7 @@
 package com.mycompany.invoise.invoiseweb.api;
 
 import com.mycompany.invoise.core.entity.invoice.Invoice;
-import com.mycompany.invoise.core.service.InvoiceServiceInterface;
+import com.mycompany.invoise.invoice.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
