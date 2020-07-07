@@ -58,5 +58,11 @@ function showDetail(invoiceNumber){
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
 
+        p = document.createElement("p");
+        text = document.createTextNode(`Order number: ${res.orderNumber}`);
+        p.appendChild(text);
+        invoiceDetailNode.appendChild(p);
+
+
     });
 }
