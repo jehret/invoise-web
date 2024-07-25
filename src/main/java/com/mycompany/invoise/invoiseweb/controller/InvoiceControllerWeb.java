@@ -21,6 +21,11 @@ public class InvoiceControllerWeb implements InvoiceControllerInterface {
         return invoiceService;
     }
 
+    @Override
+    public String createInvoice(Invoice invoice) {
+        return "";
+    }
+
     public void setInvoiceService(InvoiceServiceInterface invoiceService) {
         this.invoiceService = invoiceService;
     }
