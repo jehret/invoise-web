@@ -1,4 +1,4 @@
-package com.mycompany.invoise.invoiseweb.controller;
+package com.mycompany.invoise.invoiseweb.api;
 
 import com.mycompany.invoise.core.entity.Invoice;
 import com.mycompany.invoise.core.service.InvoiceServiceInterface;
@@ -11,9 +11,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @Controller
 @RequestMapping("/invoice")
-public class InvoiceControllerWeb {
+public class InvoiceResource {
 
     @Autowired
     private InvoiceServiceInterface invoiceService;
@@ -56,4 +57,13 @@ public class InvoiceControllerWeb {
         //List<Invoice> invoices=invoiceService.getInvoiceList();
         return "invoice-details";
     }
+
+    @GetMapping("/create-form")
+    public String displayInvoiceCreateForm(@ModelAttribute InvoiceForm invoice){
+        //vous pourriez même supprimer l'annotation @ModelAttribute si vous ne comptez
+        //pas donner un identifiant personnalisé au backing bean
+        return "invoice-create-form";
+    }
+
+
 }
