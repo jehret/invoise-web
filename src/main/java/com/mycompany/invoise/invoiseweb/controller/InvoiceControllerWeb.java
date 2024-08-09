@@ -26,6 +26,7 @@ public class InvoiceControllerWeb implements InvoiceControllerInterface {
     }
 
     @PostMapping
+    @Override
     public String createInvoice(@ModelAttribute Invoice invoice){
         //vous pourriez même supprimer l'annotation @ModelAttribute si vous ne comptez
         //pas donner un identifiant personnalisé au backing bean
