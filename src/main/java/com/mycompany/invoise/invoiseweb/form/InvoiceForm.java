@@ -9,7 +9,7 @@ public class InvoiceForm {
     private String number;
     @NotBlank
     private String customerName;
-    @Size(min=10,max=13)
+    @Size(min = 10, max = 13)
     private String orderNumber;
 
     public String getNumber() {
