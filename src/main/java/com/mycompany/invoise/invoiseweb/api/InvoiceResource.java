@@ -23,20 +23,20 @@ public class InvoiceResource {
     }
 
     @PostMapping
-    public Invoice create(@RequestBody Invoice invoice){
+    public Invoice create(@RequestBody Invoice invoice) {
 
         return invoiceService.createInvoice(invoice);
     }
 
     @GetMapping
-    public List<Invoice> list(){
+    public List<Invoice> list() {
         System.out.println("La méthode display Home a été invoquée");
 
         return invoiceService.getInvoiceList();
     }
 
     @GetMapping("/{id}")
-    public Invoice get(@PathVariable("id") String number){
+    public Invoice get(@PathVariable("id") String number) {
         System.out.println("La méthode displayInvoice a été invoquée");
 
         return invoiceService.getInvoiceByNumber(number);
