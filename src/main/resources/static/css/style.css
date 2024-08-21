@@ -1,25 +1,26 @@
 article {
-  position: absolute;
-  width: 100%;
-  padding: 20px;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
 }
 
 .container {
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
+
 
 .left-half {
 
-  position: absolute;
-  left: 0px;
-  width: 50%;
+    position: absolute;
+    left: 0px;
+    width: 50%;
 }
 
 .right-half {
 
-  position: absolute;
-  right: 0px;
-  width: 50%;
+    position: absolute;
+    right: 0px;
+    width: 50%;
 }
 
