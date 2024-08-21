@@ -5,11 +5,11 @@
     <title>Création de la facture</title>
 </head>
 <body>
-<form th:action="@{/invoice/create}" method="POST" th:object="${invoiceForm}">
-    <p>Customer name<input type="text" th:field="*{customerName}"/></p>
-    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></div>
-    <p>Order number<input type="text" th:field="*{orderNumber}"/></p>
-    <div th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}"></div>
+<form method="POST" th:action="@{/invoice/create}" th:object="${invoiceForm}">
+    <p>Customer name<input th:field="*{customerName}" type="text"/></p>
+    <div th:errors="*{customerName}" th:if="${#fields.hasErrors('customerName')}"></div>
+    <p>Order number<input th:field="*{orderNumber}" type="text"/></p>
+    <div th:errors="*{orderNumber}" th:if="${#fields.hasErrors('orderNumber')}"></div>
     <div></div>
     <input type="submit" value="OK"/>
 </form>
