@@ -5,8 +5,6 @@ import com.mycompany.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/invoice")
 public class InvoiceResource {
@@ -23,20 +21,20 @@ public class InvoiceResource {
     }
 
     @PostMapping
-    public Invoice create(@RequestBody Invoice invoice){
+    public Invoice create(@RequestBody Invoice invoice) {
 
         return invoiceService.createInvoice(invoice);
     }
 
     @GetMapping
-    public Iterable<Invoice> list(){
+    public Iterable<Invoice> list() {
         System.out.println("La méthode list a été invoquée");
 
         return invoiceService.getInvoiceList();
     }
 
     @GetMapping("/{id}")
-    public Invoice get(@PathVariable("id") String number){
+    public Invoice get(@PathVariable("id") String number) {
         System.out.println("La méthode displayInvoice a été invoquée");
 
         return invoiceService.getInvoiceByNumber(number);
