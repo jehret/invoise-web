@@ -1,6 +1,5 @@
 package com.mycompany.invoise.invoiseweb.controller;
 
-import com.mycompany.invoise.core.controller.InvoiceControllerInterface;
 import com.mycompany.invoise.core.entity.Customer;
 import com.mycompany.invoise.core.entity.Invoice;
 import com.mycompany.invoise.core.service.InvoiceServiceInterface;
@@ -10,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
@@ -30,14 +31,14 @@ public class InvoiceControllerWeb {
     }
 
     @PostMapping("/create")
-    public String createInvoice(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results){
+    public String createInvoice(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results) {
         //vous pourriez même supprimer l'annotation @ModelAttribute si vous ne comptez
         //pas donner un identifiant personnalisé au backing bean
-        if (results.hasErrors()){
+        if (results.hasErrors()) {
             return "invoice-create-form";
         }
         Invoice invoice = new Invoice();
-        Customer customer=new Customer(invoiceForm.getCustomerName());
+        Customer customer = new Customer(invoiceForm.getCustomerName());
         invoice.setCustomer(customer);
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
@@ -45,7 +46,7 @@ public class InvoiceControllerWeb {
     }
 
     @GetMapping("/home")
-    public String displayHome(Model model){
+    public String displayHome(Model model) {
         System.out.println("La méthode display Home a été invoquée");
         return "invoice-home";
     }
@@ -60,7 +61,7 @@ public class InvoiceControllerWeb {
     }*/
 
     @GetMapping("/create-form")
-    public String displayInvoiceCreateForm(@ModelAttribute InvoiceForm invoice){
+    public String displayInvoiceCreateForm(@ModelAttribute InvoiceForm invoice) {
         //vous pourriez même supprimer l'annotation @ModelAttribute si vous ne comptez
         //pas donner un identifiant personnalisé au backing bean
         return "invoice-create-form";
