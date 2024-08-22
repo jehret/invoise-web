@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class InvoiseWebApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(InvoiseWebApplication.class, args);
+        SpringApplication.run(InvoiseWebApplication.class, args);
 
-	}
+    }
 
-	@Bean
-	public Hibernate5Module datatypeHibernateModule() {
-		return new Hibernate5Module();
-	}
+    @Bean
+    public Hibernate5Module datatypeHibernateModule() {
+        return new Hibernate5Module();
+    }
 
 
 }
