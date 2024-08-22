@@ -5,21 +5,21 @@
     <title>Création de la facture</title>
 </head>
 <body>
-<form th:action="@{/invoice/create}" method="POST" th:object="${invoiceForm}">
-    <p>Customer name<input type="text" th:field="*{customerName}"/></p>
-    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></div>
-    <p>Order number<input type="text" th:field="*{orderNumber}"/></p>
-    <div th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}"></div>
-    <p>Street name<input type="text" th:field="*{streetName}"/></p>
-    <div th:if="${#fields.hasErrors('streetName')}" th:errors="*{streetName}"></div>
-    <p>Street number<input type="text" th:field="*{streetNumber}"/></p>
-    <div th:if="${#fields.hasErrors('streetNumber')}" th:errors="*{streetNumber}"></div>
-    <p>City<input type="text" th:field="*{city}"/></p>
-    <div th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
-    <p>Zip code<input type="text" th:field="*{zipCode}"/></p>
-    <div th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}"></div>
-    <p>Country<input type="text" th:field="*{country}"/></p>
-    <div th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></div>
+<form method="POST" th:action="@{/invoice/create}" th:object="${invoiceForm}">
+    <p>Customer name<input th:field="*{customerName}" type="text"/></p>
+    <div th:errors="*{customerName}" th:if="${#fields.hasErrors('customerName')}"></div>
+    <p>Order number<input th:field="*{orderNumber}" type="text"/></p>
+    <div th:errors="*{orderNumber}" th:if="${#fields.hasErrors('orderNumber')}"></div>
+    <p>Street name<input th:field="*{streetName}" type="text"/></p>
+    <div th:errors="*{streetName}" th:if="${#fields.hasErrors('streetName')}"></div>
+    <p>Street number<input th:field="*{streetNumber}" type="text"/></p>
+    <div th:errors="*{streetNumber}" th:if="${#fields.hasErrors('streetNumber')}"></div>
+    <p>City<input th:field="*{city}" type="text"/></p>
+    <div th:errors="*{city}" th:if="${#fields.hasErrors('city')}"></div>
+    <p>Zip code<input th:field="*{zipCode}" type="text"/></p>
+    <div th:errors="*{zipCode}" th:if="${#fields.hasErrors('zipCode')}"></div>
+    <p>Country<input th:field="*{country}" type="text"/></p>
+    <div th:errors="*{country}" th:if="${#fields.hasErrors('country')}"></div>
     <div></div>
     <input type="submit" value="OK"/>
 </form>
