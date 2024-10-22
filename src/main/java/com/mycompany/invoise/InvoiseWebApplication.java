@@ -11,13 +11,11 @@ public class InvoiseWebApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(InvoiseWebApplication.class, args);
-
     }
 
     @Bean
     public Hibernate6Module datatypeHibernateModule() {
         return new Hibernate6Module();
     }
-
 
 }
